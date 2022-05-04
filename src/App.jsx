@@ -24,7 +24,13 @@ function RGB() {
 }
 
 function ScreenColor() {
-  return <div></div>;
+  return (
+    <div>
+      <Route path={'/rgb/:r/:g/:b'}>
+        <RGB />
+      </Route>
+    </div>
+  );
 }
 
 export default function App() {
@@ -39,9 +45,6 @@ export default function App() {
         <Switch>
           <Route exact path="/">
             <Redirect to="/rgb/192/192/192" />
-          </Route>
-          <Route path={'/rgb/:r/:g/:b'}>
-            <RGB />
           </Route>
         </Switch>
       </header>
